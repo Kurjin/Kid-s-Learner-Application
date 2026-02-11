@@ -1,0 +1,6 @@
+﻿a block of code that is used to help with a specific task or function
+
+tester, helper, utility, function, class, module, code, task, function, readability, maintainability, abstraction, logic
+
+StringHelper,
+DataHelper

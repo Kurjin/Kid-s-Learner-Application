@@ -1,0 +1,6 @@
+﻿Interface for specific task or function.
+
+Processes, methods, properties, events, class, module, contract, code reusability, flexibility, object-oriented programming
+
+IUserRepository
+ILogger

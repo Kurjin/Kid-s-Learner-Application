@@ -29,14 +29,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="database\" />
-    <Folder Include="interface\" />
-    <Folder Include="model\" />
-    <Folder Include="module\" />
-    <Folder Include="helper\" />
-    <Folder Include="service\" />
-    <Folder Include="ui\" />
-  </ItemGroup>
-
 </Project>
