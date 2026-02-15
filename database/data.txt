@@ -3,3 +3,11 @@
 DbContext.vb
 UserRepository.vb
 AccountRepository.vb
+
+
+App.config : add this section to specify the connection string for the database.
+<connectionStrings>
+<add name="dbKLA"
+			 connectionString="Server=?;Database=?;username=?;password=?;"
+			 providerName="MySql.Data.MySqlClient" />
+</connectionStrings>
