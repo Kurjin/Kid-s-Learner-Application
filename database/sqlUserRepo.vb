@@ -40,16 +40,16 @@ Public Class sqlUserRepo
         Using conn = _db.connect()
             If conn Is Nothing Then Return Nothing
             Using cmd = conn.CreateCommand()
-                cmd.CommandText = "SELECT id, username, password_hash, salt, created_at FROM users WHERE username = @u LIMIT 1"
+                cmd.CommandText = "SELECT id, username, p_Hash, p_Salt, created_At FROM users WHERE username = @u LIMIT 1"
                 cmd.Parameters.AddWithValue("@u", username)
                 Using rdr = cmd.ExecuteReader()
                     If rdr.Read() Then
                         Dim u As New [user]() With {
                             .Id = Convert.ToInt32(rdr("id")),
-                            .Username = rdr("username").ToString(),
-                            .PasswordHash = rdr("password_hash").ToString(),
-                            .Salt = rdr("salt").ToString(),
-                            .CreatedAt = Convert.ToDateTime(rdr("created_at"))
+                            .username = rdr("username").ToString(),
+                            .PasswordHash = rdr("p_Hash").ToString(),
+                            .Salt = rdr("p_Salt").ToString(),
+                            .CreatedAt = Convert.ToDateTime(rdr("created_At"))
                         }
                         Return u
                     End If

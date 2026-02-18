@@ -1,23 +1,15 @@
 ﻿Imports System.Configuration
 Imports MySql.Data.MySqlClient
 
-
 Public Class dbConnection
-    'read connection string from App.config
-    Dim connString As String = ConfigurationManager.ConnectionStrings("dbKLA").ConnectionString
-    Dim conn As New MySqlConnection(connString)
 
-    Public Function connect() As MySqlConnection
-        Try
-            conn.Open()
-            MessageBox.Show("Connection successful")
-            conn.Close()
-            Return conn
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Return Nothing
-        Finally
-            conn.Dispose()
-        End Try
+    Private ReadOnly _connString As String =
+        ConfigurationManager.ConnectionStrings("dbKLA").ConnectionString
+
+    Public Function Connect() As MySqlConnection
+        Dim conn As New MySqlConnection(_connString)
+        conn.Open()
+        Return conn
     End Function
+
 End Class
