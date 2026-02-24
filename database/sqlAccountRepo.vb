@@ -7,7 +7,7 @@ Public Class sqlAccountRepo
         Using conn = _db.connect()
             If conn Is Nothing Then Return False
             Using cmd = conn.CreateCommand()
-                cmd.CommandText = "INSERT INTO account_logs(user_id, action, timestamp) VALUES(@uid, @act, @ts)"
+                cmd.CommandText = "INSERT INTO account_logs(user_Id, user_Action, timestamp_Date) VALUES(@uid, @act, @ts)"
                 cmd.Parameters.AddWithValue("@uid", userId)
                 cmd.Parameters.AddWithValue("@act", action)
                 cmd.Parameters.AddWithValue("@ts", DateTime.UtcNow)
