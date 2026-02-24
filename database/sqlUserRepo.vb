@@ -27,7 +27,7 @@ Public Class sqlUserRepo
                     cmd.ExecuteNonQuery()
                     Dim insertedId As Long = cmd.LastInsertedId
                     Dim accRepo As New sqlAccountRepo()
-                    accRepo.Log(insertedId, "created")
+                    accRepo.Log(insertedId, "Account : User registered successfully!")
                     Return True
                 Catch ex As MySqlException
                     Return False
@@ -66,7 +66,7 @@ Public Class sqlUserRepo
         Dim ok = SecureEquals(computed, u.PasswordHash)
         If ok Then
             Dim accRepo As New sqlAccountRepo()
-            accRepo.Log(u.Id, "login")
+            accRepo.Log(u.Id, "Account : " + u.username + " Logged In")
         End If
         Return ok
     End Function
